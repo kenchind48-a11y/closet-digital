@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Closet Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="theme-color" content="#ff5c8a">
+</head>
+<body>
+  <main>
+    <section id="welcomeScreen" class="screen welcome-screen">
+      <div class="welcome-content">
+        <p class="eyebrow">Bienvenida</p>
+        <h1>Closet Digital</h1>
+        <p class="welcome-text">Tu armario premium en una app móvil elegante y simple.</p>
+        <button id="beginButton" class="button primary">Comenzar</button>
+      </div>
+    </section>
+
+    <section id="app" class="screen app-screen hidden" aria-hidden="true">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Closet Digital</p>
+          <h2>Mi guardarropa</h2>
+        </div>
+      </header>
+
+      <section class="panel add-item-panel">
+        <div class="panel-header">
+          <p class="eyebrow">Nueva prenda</p>
+          <h3>Agregar prenda</h3>
+        </div>
+        <form id="addItemForm" class="form-grid">
+          <div class="form-group">
+            <label for="nombrePrenda">Nombre de la prenda</label>
+            <input id="nombrePrenda" name="nombrePrenda" type="text" placeholder="Ej. Top rosa" required>
+          </div>
+
+          <div class="form-group">
+            <label for="categoriaPrenda">Categoría</label>
+            <select id="categoriaPrenda" name="categoriaPrenda" required>
+              <option value="">Selecciona categoría</option>
+              <option value="Tops">Tops</option>
+              <option value="pantalones">pantalones</option>
+              <option value="Vestidos">Vestidos</option>
+              <option value="Zapatos">Zapatos</option>
+              <option value="Accesorios">Accesorios</option>
+              <option value="Hoodies">Hoodies</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="colorPrenda">Color</label>
+            <select id="colorPrenda" name="colorPrenda" required>
+              <option value="">Selecciona color</option>
+              <option value="Rosa">Rosa</option>
+              <option value="Nude">Nude</option>
+              <option value="Blanco">Blanco</option>
+              <option value="Negro">Negro</option>
+              <option value="Lavanda">Lavanda</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="seasonPrenda">Temporada</label>
+            <select id="seasonPrenda" name="seasonPrenda" required>
+              <option value="">Selecciona temporada</option>
+              <option value="Primavera">Primavera</option>
+              <option value="Verano">Verano</option>
+              <option value="Otoño">Otoño</option>
+              <option value="Invierno">Invierno</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="imagenPrenda">Imagen de prenda</label>
+            <input id="imagenPrenda" name="imagenPrenda" type="file" accept="image/*">
+          </div>
+
+          <button id="btnAgregar" class="button primary full-width" type="submit">Agregar prenda</button>
+        </form>
+      </section>
+
+      <section class="panel wardrobe-panel">
+        <div class="panel-header">
+          <p class="eyebrow">Armario</p>
+          <h3>Explora tus categorías</h3>
+        </div>
+        <div id="categoryScroller" class="category-scroller"></div>
+      </section>
+
+      <section class="panel outfits-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Outfits</p>
+            <h3>Combinaciones guardadas</h3>
+          </div>
+          <button id="createOutfitButton" class="button secondary">Crear outfit</button>
+        </div>
+        <div id="outfitList" class="outfit-list"></div>
+      </section>
+    </section>
+
+    <aside id="outfitModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Nuevo outfit</p>
+            <h3>Crear outfit</h3>
+          </div>
+          <button id="closeOutfitModal" class="icon-button" type="button" aria-label="Cerrar modal">✕</button>
+        </div>
+
+        <div class="form-group">
+          <label for="outfitName">Nombre del outfit</label>
+          <input id="outfitName" name="outfitName" type="text" placeholder="Ej. Look tarde" required>
+        </div>
+
+        <div id="outfitSelectionGrid" class="outfit-selection-grid" aria-label="Selección de prendas"></div>
+
+        <button id="btnGuardarOutfit" class="button primary full-width" type="button">Guardar outfit</button>
+      </div>
+    </aside>
+
+    <aside id="outfitPreviewModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Outfit</p>
+            <h3 id="previewOutfitName">Vista de outfit</h3>
+          </div>
+          <button id="closeOutfitPreviewModal" class="icon-button" type="button" aria-label="Cerrar modal">✕</button>
+        </div>
+
+        <div id="outfitPreviewContainer" class="outfit-preview-container"></div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
