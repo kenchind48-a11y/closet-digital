@@ -2,7 +2,7 @@
   "name": "Closet Digital",
   "short_name": "Closet",
   "description": "Administra tu armario digital desde cualquier dispositivo.",
-  "start_url": "./01-index.html",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#ffe4ec",
