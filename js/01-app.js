@@ -1137,7 +1137,7 @@ function registerServiceWorker() {
   }
 
   window.addEventListener('load', function () {
-    navigator.serviceWorker.register('./sw.js', { scope: './' })
+    navigator.serviceWorker.register('03-sw.js', { scope: './' })
       .then(function (registration) {
         console.log('Service Worker registrado con alcance:', registration.scope);
       })

@@ -2,12 +2,12 @@ const CACHE_NAME = "closet-digital-v1";
 
 const urlsToCache = [
   "./",
-  "./index.html",
-  "./style.css",
-  "./app.js",
-  "./manifest.json",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png"
+  "./01-index.html",
+  "./css/01-style.css",
+  "./js/01-app.js",
+  "./02-manifest.json",
+  "./icons/01-icon-192.png",
+  "./icons/02-icon-512.png"
 ];
 
 // INSTALAR

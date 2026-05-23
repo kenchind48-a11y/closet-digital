@@ -1,8 +1,8 @@
 [build]
-  publish = "closet-digital"
+  publish = "."
   command = ""
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/01-index.html"
   status = 200
