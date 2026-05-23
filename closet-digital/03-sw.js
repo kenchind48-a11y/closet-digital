@@ -1,10 +1,10 @@
-const CACHE_NAME = "mi-app-v1";
+const CACHE_NAME = "closet-digital-v1";
 
 const urlsToCache = [
   "./",
   "./index.html",
   "./style.css",
-  "./script.js",
+  "./app.js",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
@@ -15,7 +15,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(urlsToCache);
-    })
+    }).then(() => self.skipWaiting())
   );
 });
 
@@ -30,7 +30,7 @@ self.addEventListener("activate", (event) => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
 
